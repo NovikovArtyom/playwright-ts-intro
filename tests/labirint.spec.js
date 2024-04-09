@@ -23,8 +23,8 @@ test("Поиск по сайту (пустая выдача)", async ({ page }) 
   const resultPage = new ResultPage(page)
   const cartPage = new CartPage(page)
 
-  mainPage.openPage();
-  mainPage.searchFor("Эйяфьядлайёкюдль");
+  await mainPage.openPage();
+  await mainPage.searchFor("Эйяфьядлайёкюдль");
 
   await resultPage.checkEmptySearchResultIsPresent()
   
