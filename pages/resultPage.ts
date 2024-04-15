@@ -1,6 +1,9 @@
-const { expect } = require("@playwright/test");
+import { Page, Locator, expect } from "@playwright/test";
 
 export class ResultPage{
+    page: Page;
+    cards: Locator;
+    emptyResultMessage: Locator;
 
     constructor(page){
         this.page = page;
@@ -8,7 +11,7 @@ export class ResultPage{
         this.emptyResultMessage = page.locator("h1").first();
     }
 
-    async getPriceForItem(index){
+    async getPriceForItem(index: number){
         const price = await this.cards.nth(index).locator(".product-card__price-current").textContent()
         return price.trim();
     }

@@ -1,7 +1,7 @@
-const { test, expect } = require("@playwright/test");
-const {MainPage} = require('../pages/mainPage');
-const {ResultPage} = require('../pages/resultPage');
-const {CartPage} = require('../pages/cartPage');
+import {test, expect} from "@playwright/test";
+import { MainPage } from "../pages/mainPage"
+import { ResultPage } from "../pages/resultPage"
+import { CartPage } from "../pages/cartPage"
 
 test("Поиск по сайту", async ({ page }) => {
   const mainPage = new MainPage(page);

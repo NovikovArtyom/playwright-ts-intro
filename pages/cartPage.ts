@@ -1,6 +1,9 @@
-const { expect } = require("@playwright/test");
+import { Page, Locator, expect } from "@playwright/test";
 
 export class CartPage{
+    page: Page;
+    totalPrice: Locator;
+    emptyCartessage: Locator;
 
     constructor(page){
         this.page = page;
